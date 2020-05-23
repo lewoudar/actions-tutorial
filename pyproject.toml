@@ -5,10 +5,20 @@ description = "A dummy tutorial to learn Github Actions"
 authors = ["lewoudar <lewoudar@gmail.com>"]
 license = "MIT"
 
+packages = [
+    {include = "tutorial"}
+]
+
 [tool.poetry.dependencies]
 python = "^3.6"
 
 [tool.poetry.dev-dependencies]
+nox = "^2019.11.9"
+flake8 = "^3.8.2"
+bandit = "^1.6.2"
+pytest = "^5.4.2"
+pytest-cov = "^2.9.0"
+codecov = "^2.1.3"
 
 [build-system]
 requires = ["poetry>=0.12"]
