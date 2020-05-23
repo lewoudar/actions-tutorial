@@ -27,4 +27,4 @@ jobs:
       - name: Tests
         run: nox -s tests-${{ matrix.python-version }}
         env:
-          CODECOV_TOKEN: 13fa1f52-5364-4534-9582-5aec37ee1216
+          CODECOV_TOKEN: ${{ secrets.codecov_token }}
