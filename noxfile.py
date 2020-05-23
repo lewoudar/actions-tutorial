@@ -25,7 +25,7 @@ def tests(session):
     session.run('pytest')
 
     # we notify codecov when the latest version of python is used
-    if session.python == PYTHON_VERSIONS[-1] and 'GITHUB_ACTIONS' not in os.environ:
+    if session.python == PYTHON_VERSIONS[-1] and 'GITHUB_ACTIONS' in os.environ:
         session.notify('codecov')
 
 
