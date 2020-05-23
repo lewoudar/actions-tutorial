@@ -1,0 +1,12 @@
+.idea
+.python-version
+.pytest_cache
+.coverage
+htmlcov
+.nox
+coverage.xml
+
+# byte-compiled / optimized
+__pycache__
+*.pyc
+*.egg-info
