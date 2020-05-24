@@ -3,8 +3,6 @@ import shutil
 
 import nox
 
-nox.options.reuse_existing_virtualenvs = True
-
 PYTHON_VERSIONS = ['pypy3', '3.6', '3.7', '3.8']
 
 

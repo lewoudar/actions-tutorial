@@ -28,3 +28,8 @@ jobs:
         run: nox -s tests-${{ matrix.python-version }}
         env:
           CODECOV_TOKEN: ${{ secrets.codecov_token }}
+      - name: Build and deploy
+        run: nox -s deploy
+        if: github.event_name == 'push' && contains(github.ref, 'refs/tags/')
+        env:
+          POETRY_PYPI_TOKEN_PYPI: do_not_forget_it
