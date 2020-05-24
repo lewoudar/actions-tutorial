@@ -32,8 +32,8 @@ def tests(session):
 @nox.session
 def codecov(session):
     """Runs codecov command to share coverage information on codecov.io"""
-    session.install('codecov==2.0.15')
-    session.run('codecov', '-f', 'coverage.xml')
+    session.install('codecov==2.1.3')
+    session.run('codecov')
 
 
 @nox.session(python=False)
