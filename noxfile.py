@@ -20,8 +20,6 @@ def lint(session):
 @nox.session(python=PYTHON_VERSIONS)
 def tests(session):
     """Runs the test suite."""
-    if session.python == 'pypy3':
-        session.run('python', '-m', 'ensurepip')
     session.install('poetry>=1.0.0,<2.0.0')
     session.run('poetry', 'install')
     session.run('pytest')
