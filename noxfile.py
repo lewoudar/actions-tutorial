@@ -5,7 +5,7 @@ import nox
 
 nox.options.reuse_existing_virtualenvs = True
 
-PYTHON_VERSIONS = ['3.6', '3.7', '3.8']
+PYTHON_VERSIONS = ['pypy3', '3.6', '3.7', '3.8']
 
 
 @nox.session(python=PYTHON_VERSIONS[-1])
@@ -34,6 +34,12 @@ def codecov(session):
     """Runs codecov command to share coverage information on codecov.io"""
     session.install('codecov==2.1.3')
     session.run('codecov')
+
+
+@nox.session(python=PYTHON_VERSIONS[-1])
+def deploy(session):
+    """Dummy deployment"""
+    session.log('This is where I should use "poetry publish --build" :D')
 
 
 @nox.session(python=False)

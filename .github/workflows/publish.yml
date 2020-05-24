@@ -1,8 +1,8 @@
 name: PUBLISH
 
 on:
-  release:
-    types: [created]
+  push:
+    tags:
 
 jobs:
   deploy:
@@ -18,7 +18,7 @@ jobs:
       - name: Install dependencies
         run: python -m pip install -U pip nox
       - name: Build and deploy
-        run: echo "This is normally where I should use 'nox -s deploy' :D "
+        run: nox -s deploy
 #      - name: Build and publish
 #        env:
 #          TWINE_USERNAME: ${{ secrets.PYPI_USERNAME }}
